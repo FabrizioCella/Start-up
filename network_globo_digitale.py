@@ -95,12 +95,13 @@ for s in stakeholders:
     """
     
     html_popup = f"""
-    <div style="text-align:left; background: rgba(255,255,255,0.9); padding:10px; border-radius:8px; width:250px;">
+    <div style="text-align:left; background: rgba(255,255,255,0.9); 
+                padding:10px; border-radius:8px; max-width:250px;">
         <h4 style="color:{color}; margin-bottom:5px;">{s['name']}</h4>
         <b>Ruolo:</b> {s['role']}<br>
         <b>Luogo:</b> {s['location']}<br>
         <b>Breve descrizione:</b> {s['descr']}<br>
-        <img src="{s['img']}" width="150px" style="margin-top:5px;">
+        <img src="{s['img']}" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">
     </div>
     """
     
@@ -113,7 +114,7 @@ for s in stakeholders:
     ).add_to(m)
 
 # -------------------------
-# Connessioni animate tra partner
+# Connessioni animate tra partner (stile digitale)
 # -------------------------
 connections = [
     ("PLAS_TEAM", "Consorzio Pecorino Toscano DOP"),
@@ -121,6 +122,26 @@ connections = [
     ("Caseificio Sociale di Manciano", "Consorzio Pecorino Toscano DOP"),
     ("PLAS_TEAM", "Tenuta di Paganico")
 ]
+
+# Trasforma stakeholders in dizionario per lookup rapido
+stake_dict = {s["name"]: s for s in stakeholders}
+
+for start_name, end_name in connections:
+    start = stake_dict.get(start_name)
+    end = stake_dict.get(end_name)
+
+    if not start or not end:
+        continue
+
+    AntPath(
+        locations=[[start["lat"], start["lon"]], [end["lat"], end["lon"]]],
+        color="cyan",          # colore digitale (neon azzurro)
+        weight=4,              # più spesso per effetto hi-tech
+        opacity=0.9,           # quasi pieno
+        dash_array=[10, 20],   # tratteggio (effetto digitale)
+        delay=600              # velocità animazione
+    ).add_to(m)
+
 # -------------------------
 # Salva il file HTML
 # -------------------------
