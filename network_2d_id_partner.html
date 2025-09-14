@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8fddadc5801ea33baef968465d25958d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<style>
+.glow-marker {
+  width: 20px;
+  height: 20px;
+  background: cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 5px cyan, 0 0 10px cyan; }
+  50% { transform: scale(1.5); box-shadow: 0 0 15px cyan, 0 0 30px cyan; }
+  100% { transform: scale(1); box-shadow: 0 0 5px cyan, 0 0 10px cyan; }
+}
+</style>
+    
+            <div class="folium-map" id="map_8fddadc5801ea33baef968465d25958d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8fddadc5801ea33baef968465d25958d = L.map(
+                "map_8fddadc5801ea33baef968465d25958d",
+                {
+                    center: [43.0, 11.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d8120beb08b59cbb409a91e73f0c58f0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d8120beb08b59cbb409a91e73f0c58f0.addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            var marker_4ea655a697badbc94d03709cc50021ad = L.marker(
+                [43.715, 10.401],
+                {
+}
+            ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            var div_icon_2f0733e8e8e597e592c91c14a7bd6436 = L.divIcon({
+  "html": "\u003cdiv class=\"glow-marker\"\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_60b95efb454ef0e8125e2cf40cc4478e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a44d747f478022acc49133f5ea92e616 = $(`<div id="html_a44d747f478022acc49133f5ea92e616" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color: cyan;">PLAS_TEAM</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Pisa, Università degli Studi di Pisa<br>         <b>Breve descrizione:</b> Si occupa di ricerca su sistemi zootecnici, agroforestazione, uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. Sviluppo di approcci partecipativi per la ricerca scientifica.<br>         <img src="plas_team.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_60b95efb454ef0e8125e2cf40cc4478e.setContent(html_a44d747f478022acc49133f5ea92e616);
+            
+        
+
+        marker_4ea655a697badbc94d03709cc50021ad.bindPopup(popup_60b95efb454ef0e8125e2cf40cc4478e)
+        ;
+
+        
+    
+    
+                marker_4ea655a697badbc94d03709cc50021ad.setIcon(div_icon_2f0733e8e8e597e592c91c14a7bd6436);
+            
+    
+            var marker_a4722f752e21a1d09e39b73740aff30b = L.marker(
+                [42.534, 11.504],
+                {
+}
+            ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            var div_icon_c591f28b02d0538038c5bd58fea3cc4f = L.divIcon({
+  "html": "\u003cdiv class=\"glow-marker\"\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_c8611ae79af9e3763cf4964bff8fe4b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f3493dad35727d805aba28bc2afc21fc = $(`<div id="html_f3493dad35727d805aba28bc2afc21fc" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color: cyan;">Caseificio Sociale di Manciano</h4>         <b>Ruolo:</b> Cooperativa<br>         <b>Luogo:</b> Manciano, Grosseto<br>         <b>Breve descrizione:</b> Rappresenta 200 aziende e lavora 10 milioni di litri di latte di pecora all'anno per la produzione di formaggi freschi e stagionati. Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM.<br>         <img src="caseificio.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_c8611ae79af9e3763cf4964bff8fe4b6.setContent(html_f3493dad35727d805aba28bc2afc21fc);
+            
+        
+
+        marker_a4722f752e21a1d09e39b73740aff30b.bindPopup(popup_c8611ae79af9e3763cf4964bff8fe4b6)
+        ;
+
+        
+    
+    
+                marker_a4722f752e21a1d09e39b73740aff30b.setIcon(div_icon_c591f28b02d0538038c5bd58fea3cc4f);
+            
+    
+            var marker_0f018180825e311cb7acf68f8c49aed6 = L.marker(
+                [42.763, 11.113],
+                {
+}
+            ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            var div_icon_a310b27a6de8dc2c3cec106af4e08357 = L.divIcon({
+  "html": "\u003cdiv class=\"glow-marker\"\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_bbd5841f854cbe702519e825eec7c68b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_31e599fbfaf6635d4aeaa03d4b8f66c4 = $(`<div id="html_31e599fbfaf6635d4aeaa03d4b8f66c4" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color: cyan;">Consorzio Pecorino Toscano DOP</h4>         <b>Ruolo:</b> Consorzio di valorizzazione<br>         <b>Luogo:</b> Grosseto, Toscana<br>         <b>Breve descrizione:</b> Si occupa di controllare il rispetto del disciplinare di produzione, organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing.<br>         <img src="pecorino.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_bbd5841f854cbe702519e825eec7c68b.setContent(html_31e599fbfaf6635d4aeaa03d4b8f66c4);
+            
+        
+
+        marker_0f018180825e311cb7acf68f8c49aed6.bindPopup(popup_bbd5841f854cbe702519e825eec7c68b)
+        ;
+
+        
+    
+    
+                marker_0f018180825e311cb7acf68f8c49aed6.setIcon(div_icon_a310b27a6de8dc2c3cec106af4e08357);
+            
+    
+            var marker_47bfd9c2fd25821c1f4a23f6817e5a7e = L.marker(
+                [42.833, 11.225],
+                {
+}
+            ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            var div_icon_429ea88cc675fe32d029d6b7be83a3d7 = L.divIcon({
+  "html": "\u003cdiv class=\"glow-marker\"\u003e\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+        var popup_1ee37ea70fb584f7569627eee6c42b40 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f9c3943c0485686fffc483ecd5b60ca4 = $(`<div id="html_f9c3943c0485686fffc483ecd5b60ca4" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color: cyan;">Tenuta di Paganico</h4>         <b>Ruolo:</b> Azienda agricola<br>         <b>Luogo:</b> Paganico, Grosseto<br>         <b>Breve descrizione:</b> Produce carne bovina di razza Maremmana allevata in sistema silvo-pastorale. Svolge attività di ristorazione ed è attiva come azienda in diversi progetti di ricerca.<br>         <img src="paganico.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_1ee37ea70fb584f7569627eee6c42b40.setContent(html_f9c3943c0485686fffc483ecd5b60ca4);
+            
+        
+
+        marker_47bfd9c2fd25821c1f4a23f6817e5a7e.bindPopup(popup_1ee37ea70fb584f7569627eee6c42b40)
+        ;
+
+        
+    
+    
+                marker_47bfd9c2fd25821c1f4a23f6817e5a7e.setIcon(div_icon_429ea88cc675fe32d029d6b7be83a3d7);
+            
+    
+            ant_path_ce3dcbe2c8d399f68e7bf73c77b97582 = L.polyline.antPath(
+              [[43.715, 10.401], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            ant_path_f0e9859bb0e73e9b6275da535a575baf = L.polyline.antPath(
+              [[43.715, 10.401], [42.534, 11.504]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            ant_path_109c728dbec97490cfb3ec484d41377f = L.polyline.antPath(
+              [[42.534, 11.504], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+    
+            ant_path_a76a9d7ba854f8d0bd371229577131ad = L.polyline.antPath(
+              [[43.715, 10.401], [42.833, 11.225]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_8fddadc5801ea33baef968465d25958d);
+        
+</script>
+</html>
