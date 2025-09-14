@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6190d793f33ca13291b0fbe9ac4975b0 {
+                #map_2f2405d72f32a4d4bb6018c0faccd356 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -52,6 +52,7 @@
         
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
 </head>
 <body>
     
@@ -70,14 +71,14 @@
 }
 </style>
     
-            <div class="folium-map" id="map_6190d793f33ca13291b0fbe9ac4975b0" ></div>
+            <div class="folium-map" id="map_2f2405d72f32a4d4bb6018c0faccd356" ></div>
         
 </body>
 <script>
     
     
-            var map_6190d793f33ca13291b0fbe9ac4975b0 = L.map(
-                "map_6190d793f33ca13291b0fbe9ac4975b0",
+            var map_2f2405d72f32a4d4bb6018c0faccd356 = L.map(
+                "map_2f2405d72f32a4d4bb6018c0faccd356",
                 {
                     center: [43.0, 11.0],
                     crs: L.CRS.EPSG3857,
@@ -94,7 +95,7 @@
 
         
     
-            var tile_layer_771e4e23ad5e14124946462f52b0f47e = L.tileLayer(
+            var tile_layer_5d6ba7c394261fd7c168f79bf90017d9 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -111,7 +112,7 @@
             );
         
     
-            tile_layer_771e4e23ad5e14124946462f52b0f47e.addTo(map_6190d793f33ca13291b0fbe9ac4975b0);
+            tile_layer_5d6ba7c394261fd7c168f79bf90017d9.addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
         
     
             L.control.fullscreen(
@@ -121,139 +122,259 @@
   "titleCancel": "Exit Full Screen",
   "forceSeparateButton": false,
 }
-            ).addTo(map_6190d793f33ca13291b0fbe9ac4975b0);
+            ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
         
     
-            var marker_de8133486892538f99ec8d0f2433b5e7 = L.marker(
+            var marker_6f4ba6f4c8b5539a089233872379dfa8 = L.marker(
                 [43.715, 10.401],
                 {
 }
-            ).addTo(map_6190d793f33ca13291b0fbe9ac4975b0);
+            ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
         
     
-            var div_icon_7b4fdaa177b8d8f3f82aa5213b41d5c9 = L.divIcon({
+            var div_icon_7f510d4d5608c26543589347bbaabf55 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:cyan;\n        box-shadow: 0 0 10px cyan, 0 0 20px cyan;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_e01da016399b3845e1f045f95586f641 = L.popup({
+        var popup_ba25b90c4d7e7591bafddfe69a4f571e = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2bbca40584c8123b7b25fb8026b339d5 = $(`<div id="html_2bbca40584c8123b7b25fb8026b339d5" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9); padding:10px; border-radius:8px; width:250px;">         <h4 style="color:cyan; margin-bottom:5px;">PLAS_TEAM</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Pisa, Università degli Studi di Pisa<br>         <b>Breve descrizione:</b> Si occupa di ricerca su sistemi zootecnici, agroforestazione,uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. Sviluppo di approcci partecipativi per la ricerca scientifica<br>         <img src="https://fabriziocella.github.io/Start-up/plas_team.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
-                popup_e01da016399b3845e1f045f95586f641.setContent(html_2bbca40584c8123b7b25fb8026b339d5);
+                var html_27282d42e7e9a6d5554a9bb42bbd9e95 = $(`<div id="html_27282d42e7e9a6d5554a9bb42bbd9e95" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:cyan; margin-bottom:5px;">PLAS_TEAM</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Pisa, Università degli Studi di Pisa<br>         <b>Breve descrizione:</b> Si occupa di ricerca su sistemi zootecnici, agroforestazione,uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. Sviluppo di approcci partecipativi per la ricerca scientifica<br>         <img src="https://fabriziocella.github.io/Start-up/plas_team.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_ba25b90c4d7e7591bafddfe69a4f571e.setContent(html_27282d42e7e9a6d5554a9bb42bbd9e95);
             
         
 
-        marker_de8133486892538f99ec8d0f2433b5e7.bindPopup(popup_e01da016399b3845e1f045f95586f641)
+        marker_6f4ba6f4c8b5539a089233872379dfa8.bindPopup(popup_ba25b90c4d7e7591bafddfe69a4f571e)
         ;
 
         
     
     
-                marker_de8133486892538f99ec8d0f2433b5e7.setIcon(div_icon_7b4fdaa177b8d8f3f82aa5213b41d5c9);
+                marker_6f4ba6f4c8b5539a089233872379dfa8.setIcon(div_icon_7f510d4d5608c26543589347bbaabf55);
             
     
-            var marker_c7fe7cc0b3d3b47848f69281e301036e = L.marker(
+            var marker_e12c962cf4977609221c5261357d4c7f = L.marker(
                 [42.534, 11.504],
                 {
 }
-            ).addTo(map_6190d793f33ca13291b0fbe9ac4975b0);
+            ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
         
     
-            var div_icon_59bf2e3058db2f0d498edf60adc6d6f6 = L.divIcon({
+            var div_icon_94a779b5474643713108c4bcf5984ed6 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:magenta;\n        box-shadow: 0 0 10px magenta, 0 0 20px magenta;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_d73e8c6d356eb35bd94d56dbbf3841df = L.popup({
+        var popup_30765cb72745dac09020f1754c7e0fdf = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_2d05a671003e4571cb68444f33aa285d = $(`<div id="html_2d05a671003e4571cb68444f33aa285d" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9); padding:10px; border-radius:8px; width:250px;">         <h4 style="color:magenta; margin-bottom:5px;">Caseificio Sociale di Manciano</h4>         <b>Ruolo:</b> Cooperativa<br>         <b>Luogo:</b> Manciano, Grosseto<br>         <b>Breve descrizione:</b> Rappresenta 200 aziende e lavora 10 milioni di litri di latte di pecora all'anno per la produzione di formaggi freschi e stagionati.Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM<br>         <img src="https://fabriziocella.github.io/Start-up/caseificio.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
-                popup_d73e8c6d356eb35bd94d56dbbf3841df.setContent(html_2d05a671003e4571cb68444f33aa285d);
+                var html_f1ad733ce3a8bac783949c348c1b0ff2 = $(`<div id="html_f1ad733ce3a8bac783949c348c1b0ff2" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:magenta; margin-bottom:5px;">Caseificio Sociale di Manciano</h4>         <b>Ruolo:</b> Cooperativa<br>         <b>Luogo:</b> Manciano, Grosseto<br>         <b>Breve descrizione:</b> Rappresenta 200 aziende e lavora 10 milioni di litri di latte di pecora all'anno per la produzione di formaggi freschi e stagionati.Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM<br>         <img src="https://fabriziocella.github.io/Start-up/caseificio.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_30765cb72745dac09020f1754c7e0fdf.setContent(html_f1ad733ce3a8bac783949c348c1b0ff2);
             
         
 
-        marker_c7fe7cc0b3d3b47848f69281e301036e.bindPopup(popup_d73e8c6d356eb35bd94d56dbbf3841df)
+        marker_e12c962cf4977609221c5261357d4c7f.bindPopup(popup_30765cb72745dac09020f1754c7e0fdf)
         ;
 
         
     
     
-                marker_c7fe7cc0b3d3b47848f69281e301036e.setIcon(div_icon_59bf2e3058db2f0d498edf60adc6d6f6);
+                marker_e12c962cf4977609221c5261357d4c7f.setIcon(div_icon_94a779b5474643713108c4bcf5984ed6);
             
     
-            var marker_7e896b6efcdb4b49915f6ec7248ec092 = L.marker(
+            var marker_2f96427620d2d020ed3548635797de2c = L.marker(
                 [42.763, 11.113],
                 {
 }
-            ).addTo(map_6190d793f33ca13291b0fbe9ac4975b0);
+            ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
         
     
-            var div_icon_d0768f8e5ef2d0944762948095d0c137 = L.divIcon({
+            var div_icon_a9dbbc6cf167c2135755cc3ae3fe0ad9 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:orange;\n        box-shadow: 0 0 10px orange, 0 0 20px orange;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_fa5aa829b7725b2a464398ef45c6c794 = L.popup({
+        var popup_5b1d4d367b31353e5d8ab896f203c199 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_c78b88aec53d0e542becbccbc0423691 = $(`<div id="html_c78b88aec53d0e542becbccbc0423691" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9); padding:10px; border-radius:8px; width:250px;">         <h4 style="color:orange; margin-bottom:5px;">Consorzio Pecorino Toscano DOP</h4>         <b>Ruolo:</b> Consorzio di valorizzazione<br>         <b>Luogo:</b> Grosseto, Toscana<br>         <b>Breve descrizione:</b> Si occupa di controllare il rispetto del disciplinare di produzione,organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing<br>         <img src="https://fabriziocella.github.io/Start-up/pecorino.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
-                popup_fa5aa829b7725b2a464398ef45c6c794.setContent(html_c78b88aec53d0e542becbccbc0423691);
+                var html_851f692698eaadc7ba723a12cf5c3b1f = $(`<div id="html_851f692698eaadc7ba723a12cf5c3b1f" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:orange; margin-bottom:5px;">Consorzio Pecorino Toscano DOP</h4>         <b>Ruolo:</b> Consorzio di valorizzazione<br>         <b>Luogo:</b> Grosseto, Toscana<br>         <b>Breve descrizione:</b> Si occupa di controllare il rispetto del disciplinare di produzione,organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing<br>         <img src="https://fabriziocella.github.io/Start-up/pecorino.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_5b1d4d367b31353e5d8ab896f203c199.setContent(html_851f692698eaadc7ba723a12cf5c3b1f);
             
         
 
-        marker_7e896b6efcdb4b49915f6ec7248ec092.bindPopup(popup_fa5aa829b7725b2a464398ef45c6c794)
+        marker_2f96427620d2d020ed3548635797de2c.bindPopup(popup_5b1d4d367b31353e5d8ab896f203c199)
         ;
 
         
     
     
-                marker_7e896b6efcdb4b49915f6ec7248ec092.setIcon(div_icon_d0768f8e5ef2d0944762948095d0c137);
+                marker_2f96427620d2d020ed3548635797de2c.setIcon(div_icon_a9dbbc6cf167c2135755cc3ae3fe0ad9);
             
     
-            var marker_f628bfc40131d3370af24d200aab020f = L.marker(
+            var marker_87a13469102727c439877ace8d088aa1 = L.marker(
                 [42.833, 11.225],
                 {
 }
-            ).addTo(map_6190d793f33ca13291b0fbe9ac4975b0);
+            ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
         
     
-            var div_icon_17cdd617aa406de39697a9fc174c1815 = L.divIcon({
+            var div_icon_5869b930757de7efca11444055190769 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:lime;\n        box-shadow: 0 0 10px lime, 0 0 20px lime;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_e05dd6bbbbca27da76938bf5b9b9884d = L.popup({
+        var popup_a42ccee6e4a478f35c33dc5bf8b27cef = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_741b13cefb549fdbcc95372cb943c311 = $(`<div id="html_741b13cefb549fdbcc95372cb943c311" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9); padding:10px; border-radius:8px; width:250px;">         <h4 style="color:lime; margin-bottom:5px;">Tenuta di Paganico</h4>         <b>Ruolo:</b> Azienda agricola<br>         <b>Luogo:</b> Paganico, Grosseto<br>         <b>Breve descrizione:</b> Produce carne bovina di razza Maremmana allevata in sistema silvopastorale...<br>         <img src="https://fabriziocella.github.io/Start-up/paganico.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
-                popup_e05dd6bbbbca27da76938bf5b9b9884d.setContent(html_741b13cefb549fdbcc95372cb943c311);
+                var html_d6c81679f1ccbd1ca3bca71e78e870f1 = $(`<div id="html_d6c81679f1ccbd1ca3bca71e78e870f1" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:lime; margin-bottom:5px;">Tenuta di Paganico</h4>         <b>Ruolo:</b> Azienda agricola<br>         <b>Luogo:</b> Paganico, Grosseto<br>         <b>Breve descrizione:</b> Produce carne bovina di razza Maremmana allevata in sistema silvopastorale...<br>         <img src="https://fabriziocella.github.io/Start-up/paganico.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_a42ccee6e4a478f35c33dc5bf8b27cef.setContent(html_d6c81679f1ccbd1ca3bca71e78e870f1);
             
         
 
-        marker_f628bfc40131d3370af24d200aab020f.bindPopup(popup_e05dd6bbbbca27da76938bf5b9b9884d)
+        marker_87a13469102727c439877ace8d088aa1.bindPopup(popup_a42ccee6e4a478f35c33dc5bf8b27cef)
         ;
 
         
     
     
-                marker_f628bfc40131d3370af24d200aab020f.setIcon(div_icon_17cdd617aa406de39697a9fc174c1815);
+                marker_87a13469102727c439877ace8d088aa1.setIcon(div_icon_5869b930757de7efca11444055190769);
             
+    
+            ant_path_c0de94ea2d513eb4d293de48fcd1239b = L.polyline.antPath(
+              [[43.715, 10.401], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 4,
+  "opacity": 0.9,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 600,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
+        
+    
+            ant_path_b57a9fcb280e12fb1d301189624dc418 = L.polyline.antPath(
+              [[43.715, 10.401], [42.534, 11.504]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 4,
+  "opacity": 0.9,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 600,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
+        
+    
+            ant_path_830076c4452076ec362565557be31441 = L.polyline.antPath(
+              [[42.534, 11.504], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 4,
+  "opacity": 0.9,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 600,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
+        
+    
+            ant_path_d7a0adf2f275be26a7410d95cd99341e = L.polyline.antPath(
+              [[43.715, 10.401], [42.833, 11.225]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 4,
+  "opacity": 0.9,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 600,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_2f2405d72f32a4d4bb6018c0faccd356);
+        
 </script>
 </html>
