@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6aafa243182bc0c4957c7bfda656149e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<style>
+.glow-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+</style>
+    
+            <div class="folium-map" id="map_6aafa243182bc0c4957c7bfda656149e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6aafa243182bc0c4957c7bfda656149e = L.map(
+                "map_6aafa243182bc0c4957c7bfda656149e",
+                {
+                    center: [43.0, 11.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_64241c9151e2e89ac05eb02e67bca2c9 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_64241c9151e2e89ac05eb02e67bca2c9.addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            var marker_ba8ae6f1f429db94ee18da0237b9b16c = L.marker(
+                [43.715, 10.401],
+                {
+}
+            ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            var div_icon_6dd144e167bc7fff242d658eec270923 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:cyan;\n        box-shadow: 0 0 10px cyan, 0 0 20px cyan;\n    \"\u003e\u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_2864ced47973484d73bc373b6dc381d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_17b9d157a2a58bddafc6bf49bb6bd315 = $(`<div id="html_17b9d157a2a58bddafc6bf49bb6bd315" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color:cyan;">PLAS_TEAM</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Pisa, Università degli Studi di Pisa<br>         <b>Breve descrizione:</b> Si occupa di ricerca su sistemi zootecnici, agroforestazione, uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. Sviluppo di approcci partecipativi per la ricerca scientifica.<br>         <img src="https://fabriziocella.github.io/Start-up/plas_team.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_2864ced47973484d73bc373b6dc381d9.setContent(html_17b9d157a2a58bddafc6bf49bb6bd315);
+            
+        
+
+        marker_ba8ae6f1f429db94ee18da0237b9b16c.bindPopup(popup_2864ced47973484d73bc373b6dc381d9)
+        ;
+
+        
+    
+    
+                marker_ba8ae6f1f429db94ee18da0237b9b16c.setIcon(div_icon_6dd144e167bc7fff242d658eec270923);
+            
+    
+            var marker_892f01d60165bba291577eab441c5dd4 = L.marker(
+                [42.534, 11.504],
+                {
+}
+            ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            var div_icon_192fde08722790e5f259c5940b8debb7 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:magenta;\n        box-shadow: 0 0 10px magenta, 0 0 20px magenta;\n    \"\u003e\u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_ac1889b2b8bb31dd4ebc9656af93aea2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a19bb868a0b6d439d49b3ef685dd5cd5 = $(`<div id="html_a19bb868a0b6d439d49b3ef685dd5cd5" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color:magenta;">Caseificio Sociale di Manciano</h4>         <b>Ruolo:</b> Cooperativa<br>         <b>Luogo:</b> Manciano, Grosseto<br>         <b>Breve descrizione:</b> Rappresenta 200 aziende e lavora 10 milioni di litri di latte di pecora all'anno per la produzione di formaggi freschi e stagionati. Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM.<br>         <img src="https://fabriziocella.github.io/Start-up/caseificio.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_ac1889b2b8bb31dd4ebc9656af93aea2.setContent(html_a19bb868a0b6d439d49b3ef685dd5cd5);
+            
+        
+
+        marker_892f01d60165bba291577eab441c5dd4.bindPopup(popup_ac1889b2b8bb31dd4ebc9656af93aea2)
+        ;
+
+        
+    
+    
+                marker_892f01d60165bba291577eab441c5dd4.setIcon(div_icon_192fde08722790e5f259c5940b8debb7);
+            
+    
+            var marker_e816caf027dac406dce2c97542846a08 = L.marker(
+                [42.763, 11.113],
+                {
+}
+            ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            var div_icon_9df37eae8fd50bdabe7e82c796eba3c3 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:orange;\n        box-shadow: 0 0 10px orange, 0 0 20px orange;\n    \"\u003e\u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_dd5c6e3caba04b7ce14b64f9662e61e9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a335f20a116ddbc50e963d2f6ac91ef = $(`<div id="html_2a335f20a116ddbc50e963d2f6ac91ef" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color:orange;">Consorzio Pecorino Toscano DOP</h4>         <b>Ruolo:</b> Consorzio di valorizzazione<br>         <b>Luogo:</b> Grosseto, Toscana<br>         <b>Breve descrizione:</b> Si occupa di controllare il rispetto del disciplinare di produzione, organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing.<br>         <img src="https://fabriziocella.github.io/Start-up/pecorino.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_dd5c6e3caba04b7ce14b64f9662e61e9.setContent(html_2a335f20a116ddbc50e963d2f6ac91ef);
+            
+        
+
+        marker_e816caf027dac406dce2c97542846a08.bindPopup(popup_dd5c6e3caba04b7ce14b64f9662e61e9)
+        ;
+
+        
+    
+    
+                marker_e816caf027dac406dce2c97542846a08.setIcon(div_icon_9df37eae8fd50bdabe7e82c796eba3c3);
+            
+    
+            var marker_9beda0c709808cb556226cacf766d125 = L.marker(
+                [42.833, 11.225],
+                {
+}
+            ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            var div_icon_9f8c646e8fd1233a8de8a3af6ee4a23b = L.divIcon({
+  "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:lime;\n        box-shadow: 0 0 10px lime, 0 0 20px lime;\n    \"\u003e\u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_deaa196ad1d57de48bb2cd512cb76af8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_57c1877a5ef052c94570ed86356cf2f9 = $(`<div id="html_57c1877a5ef052c94570ed86356cf2f9" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; color:black; width:250px;">         <h4 style="color:lime;">Tenuta di Paganico</h4>         <b>Ruolo:</b> Azienda agricola<br>         <b>Luogo:</b> Paganico, Grosseto<br>         <b>Breve descrizione:</b> Produce carne bovina di razza Amaremmana allevata in sistema silvopastorale. Presenta anche un ristorante ed è attiva come azienda in diversi progetti di ricerca.<br>         <img src="https://fabriziocella.github.io/Start-up/paganico.png" width="150px" style="margin-top:5px;">     </div>     </div>`)[0];
+                popup_deaa196ad1d57de48bb2cd512cb76af8.setContent(html_57c1877a5ef052c94570ed86356cf2f9);
+            
+        
+
+        marker_9beda0c709808cb556226cacf766d125.bindPopup(popup_deaa196ad1d57de48bb2cd512cb76af8)
+        ;
+
+        
+    
+    
+                marker_9beda0c709808cb556226cacf766d125.setIcon(div_icon_9f8c646e8fd1233a8de8a3af6ee4a23b);
+            
+    
+            ant_path_180ef88f7558bf6d47e9bc358c9ee433 = L.polyline.antPath(
+              [[43.715, 10.401], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            ant_path_a201e528b754a64f1f030035b7218805 = L.polyline.antPath(
+              [[43.715, 10.401], [42.534, 11.504]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            ant_path_2ace4d78787c8ad0a021e7f0d5c23197 = L.polyline.antPath(
+              [[42.534, 11.504], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+    
+            ant_path_a8070802cc298898312b2586b2e643f9 = L.polyline.antPath(
+              [[43.715, 10.401], [42.833, 11.225]],
+              {
+  "stroke": true,
+  "color": "cyan",
+  "weight": 3,
+  "opacity": 0.8,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "cyan",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 1000,
+  "pulseColor": "#FFFFFF",
+}
+        ).addTo(map_6aafa243182bc0c4957c7bfda656149e);
+        
+</script>
+</html>

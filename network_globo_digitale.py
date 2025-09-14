@@ -1,6 +1,9 @@
 import folium
 from folium.plugins import AntPath
 
+# --- BASE URL DELLE IMMAGINI SU GITHUB ---
+base_url = "https://fabriziocella.github.io/Start-up/"
+
 # Dati partner
 stakeholders = [
     {
@@ -14,7 +17,7 @@ stakeholders = [
             "Sviluppo di approcci partecipativi per la ricerca scientifica."
         ),
         "location": "Pisa, Università degli Studi di Pisa",
-        "img": "plas_team.png"
+        "img": base_url + "plas_team.png"
     },
     {
         "name": "Caseificio Sociale di Manciano",
@@ -26,7 +29,7 @@ stakeholders = [
             "risultato della ricerca in collaborazione con PLAS_TEAM."
         ),
         "location": "Manciano, Grosseto",
-        "img": "caseificio.png"
+        "img": base_url + "caseificio.png"
     },
     {
         "name": "Consorzio Pecorino Toscano DOP",
@@ -37,7 +40,7 @@ stakeholders = [
             "per gli allevatori del circuito e creare progetti di valorizzazione e marketing."
         ),
         "location": "Grosseto, Toscana",
-        "img": "pecorino.png"
+        "img": base_url + "pecorino.png"
     },
     {
         "name": "Tenuta di Paganico",
@@ -48,7 +51,7 @@ stakeholders = [
             "ed è attiva come azienda in diversi progetti di ricerca."
         ),
         "location": "Paganico, Grosseto",
-        "img": "paganico.png"
+        "img": base_url + "paganico.png"
     }
 ]
 
@@ -56,9 +59,11 @@ stakeholders = [
 role_colors = {
     "Ricercatore": "cyan",
     "Cooperativa": "magenta",
-    "Consorzio di valorizzazione": "yellow",
+    "Consorzio di valorizzazione": "orange",  # più visibile
     "Azienda agricola": "lime"
 }
+
+popup_text_color = "black"
 
 # Crea mappa
 m = folium.Map(location=[43.0, 11.0], zoom_start=7, tiles='CartoDB dark_matter')
@@ -85,7 +90,6 @@ m.get_root().html.add_child(folium.Element(css))
 for s in stakeholders:
     color = role_colors.get(s["role"], "cyan")
     
-    # Marker pulsante con colore dinamico
     marker_html = f"""
     <div class="glow-marker" style="
         background:{color};
@@ -94,7 +98,7 @@ for s in stakeholders:
     """
     
     html_popup = f"""
-    <div style="text-align:left; color:black; width:250px;">
+    <div style="text-align:left; color:{popup_text_color}; width:250px;">
         <h4 style="color:{color};">{s['name']}</h4>
         <b>Ruolo:</b> {s['role']}<br>
         <b>Luogo:</b> {s['location']}<br>
@@ -130,6 +134,8 @@ for c in connections:
         delay=1000
     ).add_to(m)
 
-# Salva la mappa finale
-m.save("network_2d_partner_finale.html")
-print("✅ Mappa completa salvata: 'network_2d_partner_finale.html'. Aprila in un browser!")
+# Salva la mappa HTML
+save_path = r"C:\Users\fabri\Desktop\SPINN_OFF\network_2d_partner_interactive.html"
+m.save(save_path)
+
+print(f"✅ Mappa salvata: {save_path}")
