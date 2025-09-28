@@ -11,9 +11,9 @@ stakeholders = [
         "lat": 43.715, "lon": 10.401,
         "role": "Ricercatore",
         "descr": "Si occupa di ricerca su sistemi zootecnici, agroforestazione,"
-        "uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, "
-        "determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. "
-        "Sviluppo di approcci partecipativi per la ricerca scientifica",
+                 "uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, "
+                 "determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. "
+                 "Sviluppo di approcci partecipativi per la ricerca scientifica",
         "location": "Pisa, Università degli Studi di Pisa",
         "img": "https://fabriziocella.github.io/Start-up/plas_team.png"
     },
@@ -22,7 +22,7 @@ stakeholders = [
         "lat": 42.534, "lon": 11.504,
         "role": "Cooperativa",
         "descr": "Rappresenta 200 aziende e lavora 10 milioni di litri di latte di pecora all'anno per la produzione di formaggi freschi e stagionati."
-        "Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM",
+                 "Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM",
         "location": "Manciano, Grosseto",
         "img": "https://fabriziocella.github.io/Start-up/caseificio.png"
     },
@@ -31,7 +31,7 @@ stakeholders = [
         "lat": 42.763, "lon": 11.113,
         "role": "Consorzio di valorizzazione",
         "descr": "Si occupa di controllare il rispetto del disciplinare di produzione,"
-        "organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing",
+                 "organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing",
         "location": "Grosseto, Toscana",
         "img": "https://fabriziocella.github.io/Start-up/pecorino.png"
     },
@@ -42,6 +42,14 @@ stakeholders = [
         "descr": "Produce carne bovina di razza Maremmana allevata in sistema silvopastorale...",
         "location": "Paganico, Grosseto",
         "img": "https://fabriziocella.github.io/Start-up/paganico.png"
+    },
+    {
+        "name": "Oikos - Innovation for sustainable rural development",
+        "lat": 43.769, "lon": 11.255,  # Firenze
+        "role": "Innovation Broker",
+        "descr": "Supporta lo sviluppo rurale sostenibile attraverso ricerca, networking tra stakeholder e implementazione di soluzioni innovative.",
+        "location": "Firenze, Toscana",
+        "img": "https://fabriziocella.github.io/Start-up/oikos.jpg"
     }
 ]
 
@@ -52,7 +60,8 @@ role_colors = {
     "Ricercatore": "cyan",
     "Cooperativa": "magenta",
     "Consorzio di valorizzazione": "orange",
-    "Azienda agricola": "lime"
+    "Azienda agricola": "lime",
+    "Innovation Broker": "red"  # colore rosso per Oikos
 }
 
 # -------------------------
@@ -120,7 +129,11 @@ connections = [
     ("PLAS_TEAM", "Consorzio Pecorino Toscano DOP"),
     ("PLAS_TEAM", "Caseificio Sociale di Manciano"),
     ("Caseificio Sociale di Manciano", "Consorzio Pecorino Toscano DOP"),
-    ("PLAS_TEAM", "Tenuta di Paganico")
+    ("PLAS_TEAM", "Tenuta di Paganico"),
+    ("Oikos - Innovation for sustainable rural development", "PLAS_TEAM"),
+    ("Oikos - Innovation for sustainable rural development", "Caseificio Sociale di Manciano"),
+    ("Oikos - Innovation for sustainable rural development", "Consorzio Pecorino Toscano DOP"),
+    ("Oikos - Innovation for sustainable rural development", "Tenuta di Paganico")
 ]
 
 # Trasforma stakeholders in dizionario per lookup rapido
@@ -135,18 +148,18 @@ for start_name, end_name in connections:
 
     AntPath(
         locations=[[start["lat"], start["lon"]], [end["lat"], end["lon"]]],
-        color="cyan",          # colore digitale (neon azzurro)
-        weight=4,              # più spesso per effetto hi-tech
-        opacity=0.9,           # quasi pieno
-        dash_array=[10, 20],   # tratteggio (effetto digitale)
-        delay=600              # velocità animazione
+        color="cyan",          
+        weight=4,              
+        opacity=0.9,           
+        dash_array=[10, 20],   
+        delay=600              
     ).add_to(m)
 
 # -------------------------
 # Salva il file HTML
 # -------------------------
 save_path = r"C:\Users\fabri\Desktop\SPINN_OFF"
-os.makedirs(save_path, exist_ok=True)  # crea la cartella se non esiste
+os.makedirs(save_path, exist_ok=True)
 file_name = "network_2d_partner_interactive.html"
 full_path = os.path.join(save_path, file_name)
 
