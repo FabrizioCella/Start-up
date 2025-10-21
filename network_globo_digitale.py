@@ -44,7 +44,7 @@ stakeholders = [
         "img": "https://fabriziocella.github.io/Start-up/paganico.png"
     },
     {
-        "name": "Oikos - Innovation for sustainable rural development",
+        "name": "RuriS - Rural Research for Innovation and Sustainability ",
         "lat": 43.769, "lon": 11.255,  # Firenze
         "role": "Innovation Broker",
         "descr": "Supporta lo sviluppo rurale sostenibile attraverso ricerca, networking tra stakeholder e implementazione di soluzioni innovative.",
