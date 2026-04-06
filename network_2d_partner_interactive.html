@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_4e777d27e36ea8881faf9eb5fd5ff0b1 {
+                #map_f66c17220ff9f8163d745f8538d79468 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -69,31 +69,52 @@
   50% { transform: scale(1.5); opacity: 1; }
   100% { transform: scale(1); opacity: 0.7; }
 }
+/* Fantasia del filtro partner */
+.leaflet-control-layers {
+    background: rgba(30,30,40,0.95);
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #00ffff;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    padding: 10px;
+}
+.leaflet-control-layers label {
+    color: white;
+    font-weight: bold;
+}
 </style>
     
 <script>
-(function() {
-    const links = document.querySelectorAll('link[rel="stylesheet"], script[src]');
-    links.forEach(el => {
-        const attr = el.tagName === 'LINK' ? 'href' : 'src';
-        el[attr] += '?v=' + new Date().getTime();
-    });
-})();
+document.addEventListener('DOMContentLoaded', function() {
+    var layersControl = document.getElementsByClassName('leaflet-control-layers')[0];
+    if (layersControl) {
+        var preTitle = layersControl.querySelector('h4');
+        if(preTitle){ preTitle.remove(); }
+        var title = document.createElement('h4');
+        title.innerText = 'Filtra Partner';
+        title.style.color = '#00ffff';
+        title.style.fontFamily = 'Segoe UI, sans-serif';
+        title.style.margin = '5px 0';
+        title.style.textAlign = 'center';
+        layersControl.prepend(title);
+    }
+});
 </script>
     
-            <div class="folium-map" id="map_4e777d27e36ea8881faf9eb5fd5ff0b1" ></div>
+            <div class="folium-map" id="map_f66c17220ff9f8163d745f8538d79468" ></div>
         
 </body>
 <script>
     
     
-            var map_4e777d27e36ea8881faf9eb5fd5ff0b1 = L.map(
-                "map_4e777d27e36ea8881faf9eb5fd5ff0b1",
+            var map_f66c17220ff9f8163d745f8538d79468 = L.map(
+                "map_f66c17220ff9f8163d745f8538d79468",
                 {
                     center: [43.0, 11.0],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 7,
+  "zoom": 6,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -105,7 +126,7 @@
 
         
     
-            var tile_layer_a65f18f2f656d4a00aa73c962ce128f5 = L.tileLayer(
+            var tile_layer_e78209f7c71c1a5654bf40885047f272 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -122,7 +143,7 @@
             );
         
     
-            tile_layer_a65f18f2f656d4a00aa73c962ce128f5.addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            tile_layer_e78209f7c71c1a5654bf40885047f272.addTo(map_f66c17220ff9f8163d745f8538d79468);
         
     
             L.control.fullscreen(
@@ -132,478 +153,558 @@
   "titleCancel": "Exit Full Screen",
   "forceSeparateButton": false,
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(map_f66c17220ff9f8163d745f8538d79468);
         
     
-            var marker_e664b283b1c2be42d2ce691b8e9db1f0 = L.marker(
+            var feature_group_8ec79d60a7fc106282e8dabaa25556bd = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_bb6501f358b00655e006727666a2f8ad = L.marker(
                 [43.715, 10.401],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
         
     
-            var div_icon_96a65b695561618d0f67abf2e49b5a5c = L.divIcon({
+            var div_icon_0c0539495e1f7215a5788f26a17b3f05 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:cyan;\n        box-shadow: 0 0 10px cyan, 0 0 20px cyan;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_f8e421f4da41c1458a5f5a5cc2995af5 = L.popup({
-  "maxWidth": 300,
+        var popup_10c5fc59894fb4dd5131bfb3863d5e62 = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_5fca671c3ab623b568e79cdbd64498d7 = $(`<div id="html_5fca671c3ab623b568e79cdbd64498d7" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:cyan; margin-bottom:5px;">PLAS_TEAM</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Pisa, Università degli Studi di Pisa<br>         <b>Breve descrizione:</b> Si occupa di ricerca su sistemi zootecnici, agroforestazione, uso di sottoprodotti di origine agroindustriale, laboratorio associato per analisi dei foraggi, determinazione degli antiossidanti nelle carni e formaggi, e profilazione degli acidi grassi in prodotti di origine animale. Sviluppo approcci partecipativi per la ricerca scientifica<br>         <img src="https://fabriziocella.github.io/Start-up/plas_team.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_f8e421f4da41c1458a5f5a5cc2995af5.setContent(html_5fca671c3ab623b568e79cdbd64498d7);
+                var html_308e71e577d2e3b7352bb60aa2e42aa9 = $(`<div id="html_308e71e577d2e3b7352bb60aa2e42aa9" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:cyan; margin-bottom:6px;">PLAS_TEAM</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Pisa, Università degli Studi di Pisa<br>         <b>Descrizione:</b> Ricerca su sistemi zootecnici, agroforestazione, sottoprodotti agroindustriali e qualità dei prodotti animali<br>         <img src="https://fabriziocella.github.io/Start-up/plas_team.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_10c5fc59894fb4dd5131bfb3863d5e62.setContent(html_308e71e577d2e3b7352bb60aa2e42aa9);
             
         
 
-        marker_e664b283b1c2be42d2ce691b8e9db1f0.bindPopup(popup_f8e421f4da41c1458a5f5a5cc2995af5)
+        marker_bb6501f358b00655e006727666a2f8ad.bindPopup(popup_10c5fc59894fb4dd5131bfb3863d5e62)
         ;
 
         
     
     
-                marker_e664b283b1c2be42d2ce691b8e9db1f0.setIcon(div_icon_96a65b695561618d0f67abf2e49b5a5c);
+                marker_bb6501f358b00655e006727666a2f8ad.setIcon(div_icon_0c0539495e1f7215a5788f26a17b3f05);
             
     
-            var marker_97335292340f88859c98fc5650ca5cb1 = L.marker(
+            var marker_f1b8b16fa4e390cfd5fa78cc98f046c6 = L.marker(
+                [47.421, 7.847],
+                {
+}
+            ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
+        
+    
+            var div_icon_70dcc953ed086bd81d06f1bc75dd9732 = L.divIcon({
+  "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:cyan;\n        box-shadow: 0 0 10px cyan, 0 0 20px cyan;\n    \"\u003e\u003c/div\u003e\n    ",
+  "className": "empty",
+});
+        
+    
+        var popup_b2c8f80b7289a75d53ff12addff32181 = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
+});
+
+        
+            
+                var html_2682478a62a302d4ea28a9c88b1bcb7b = $(`<div id="html_2682478a62a302d4ea28a9c88b1bcb7b" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:cyan; margin-bottom:6px;">FiBL</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Frick, Switzerland<br>         <b>Descrizione:</b> Ricerca su agricoltura biologica e sostenibilità<br>         <img src="https://fabriziocella.github.io/Start-up/fibl.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_b2c8f80b7289a75d53ff12addff32181.setContent(html_2682478a62a302d4ea28a9c88b1bcb7b);
+            
+        
+
+        marker_f1b8b16fa4e390cfd5fa78cc98f046c6.bindPopup(popup_b2c8f80b7289a75d53ff12addff32181)
+        ;
+
+        
+    
+    
+                marker_f1b8b16fa4e390cfd5fa78cc98f046c6.setIcon(div_icon_70dcc953ed086bd81d06f1bc75dd9732);
+            
+    
+            var marker_b013ba04a38e1630d3baddd25e36aeec = L.marker(
                 [46.875, 7.058],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
         
     
-            var div_icon_9430ef378e8828bb12e75d597005a196 = L.divIcon({
+            var div_icon_d11444e81eaf2e6c3318f7c6589cbeef = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:cyan;\n        box-shadow: 0 0 10px cyan, 0 0 20px cyan;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_a0182472cbf5f1961bd2ee6b2d586e99 = L.popup({
-  "maxWidth": 300,
+        var popup_d42df2e1b12de0f4a1f0dfbbf32aaad1 = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_42ec116928194d1763f52b741d2d7d2e = $(`<div id="html_42ec116928194d1763f52b741d2d7d2e" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:cyan; margin-bottom:5px;">Agroscope</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Posieux, Switzerland<br>         <b>Breve descrizione:</b> Centro svizzero di ricerca agricola e agroalimentare<br>         <img src="https://fabriziocella.github.io/Start-up/agroscope.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_a0182472cbf5f1961bd2ee6b2d586e99.setContent(html_42ec116928194d1763f52b741d2d7d2e);
+                var html_cc9104c6dadded0880f5e83302b3a193 = $(`<div id="html_cc9104c6dadded0880f5e83302b3a193" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:cyan; margin-bottom:6px;">Agroscope</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Posieux, Switzerland<br>         <b>Descrizione:</b> Centro svizzero di ricerca agricola<br>         <img src="https://fabriziocella.github.io/Start-up/agroscope.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_d42df2e1b12de0f4a1f0dfbbf32aaad1.setContent(html_cc9104c6dadded0880f5e83302b3a193);
             
         
 
-        marker_97335292340f88859c98fc5650ca5cb1.bindPopup(popup_a0182472cbf5f1961bd2ee6b2d586e99)
+        marker_b013ba04a38e1630d3baddd25e36aeec.bindPopup(popup_d42df2e1b12de0f4a1f0dfbbf32aaad1)
         ;
 
         
     
     
-                marker_97335292340f88859c98fc5650ca5cb1.setIcon(div_icon_9430ef378e8828bb12e75d597005a196);
+                marker_b013ba04a38e1630d3baddd25e36aeec.setIcon(div_icon_d11444e81eaf2e6c3318f7c6589cbeef);
             
     
-            var marker_15a048079d7ad41bfc1775ff4580e2a2 = L.marker(
+            var marker_5c6e6b7d61a4666883b8a078d8131ec2 = L.marker(
                 [40.033, -6.088],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
         
     
-            var div_icon_041ab2227a832e15fd7b67e76690a0c2 = L.divIcon({
+            var div_icon_98699509b7e7410f3502e59064e74541 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:cyan;\n        box-shadow: 0 0 10px cyan, 0 0 20px cyan;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_319283c968cc4e69998fbf9491e983a7 = L.popup({
-  "maxWidth": 300,
+        var popup_41aacfa3c40b7ef9cdaa1cb70f96ba3c = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_a9da44970bdaec4b363e14c2fd9e4f01 = $(`<div id="html_a9da44970bdaec4b363e14c2fd9e4f01" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:cyan; margin-bottom:5px;">Universidad de Extremadura</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Plasencia, Spain<br>         <b>Breve descrizione:</b> Università pubblica spagnola con sede a Plasencia<br>         <img src="https://fabriziocella.github.io/Start-up/unex.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_319283c968cc4e69998fbf9491e983a7.setContent(html_a9da44970bdaec4b363e14c2fd9e4f01);
+                var html_173b3901fbbf83f86dd71086c716505f = $(`<div id="html_173b3901fbbf83f86dd71086c716505f" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:cyan; margin-bottom:6px;">Universidad de Extremadura</h4>         <b>Ruolo:</b> Ricercatore<br>         <b>Luogo:</b> Plasencia, Spain<br>         <b>Descrizione:</b> Università pubblica spagnola<br>         <img src="https://fabriziocella.github.io/Start-up/unex.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_41aacfa3c40b7ef9cdaa1cb70f96ba3c.setContent(html_173b3901fbbf83f86dd71086c716505f);
             
         
 
-        marker_15a048079d7ad41bfc1775ff4580e2a2.bindPopup(popup_319283c968cc4e69998fbf9491e983a7)
+        marker_5c6e6b7d61a4666883b8a078d8131ec2.bindPopup(popup_41aacfa3c40b7ef9cdaa1cb70f96ba3c)
         ;
 
         
     
     
-                marker_15a048079d7ad41bfc1775ff4580e2a2.setIcon(div_icon_041ab2227a832e15fd7b67e76690a0c2);
+                marker_5c6e6b7d61a4666883b8a078d8131ec2.setIcon(div_icon_98699509b7e7410f3502e59064e74541);
             
     
-            var marker_ffd9162d048ef23091e78f926562b13b = L.marker(
+            ant_path_41923f5d5558045ceb41138e8e64e079 = L.polyline.antPath(
+              [[43.769, 11.255], [43.715, 10.401]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
+        
+    
+            ant_path_9ded992e80c179cf9aebb6ae06d42d7b = L.polyline.antPath(
+              [[43.769, 11.255], [47.421, 7.847]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
+        
+    
+            ant_path_ead605afd02a3dd0270d1767a1f83721 = L.polyline.antPath(
+              [[43.769, 11.255], [46.875, 7.058]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
+        
+    
+            ant_path_ef40a57acb8a845fb7652389e3f6256c = L.polyline.antPath(
+              [[43.769, 11.255], [40.033, -6.088]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_8ec79d60a7fc106282e8dabaa25556bd);
+        
+    
+            feature_group_8ec79d60a7fc106282e8dabaa25556bd.addTo(map_f66c17220ff9f8163d745f8538d79468);
+        
+    
+            var feature_group_16b647358e970e1371d9390a08370ebf = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_105bb302d5cf9cba789c1a32ce515d54 = L.marker(
                 [42.534, 11.504],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_16b647358e970e1371d9390a08370ebf);
         
     
-            var div_icon_fe1fc57fe9ff0d63cf05abc11094dacf = L.divIcon({
+            var div_icon_131d0edd38e5eea13ad6ca49d6b8a8ff = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:magenta;\n        box-shadow: 0 0 10px magenta, 0 0 20px magenta;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_bd790b77962aec120d95d37fc118d230 = L.popup({
-  "maxWidth": 300,
+        var popup_5b0eebe33e6449878e82e47d5750f34d = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_ac12835ace8c9dc0c0622652947534dd = $(`<div id="html_ac12835ace8c9dc0c0622652947534dd" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:magenta; margin-bottom:5px;">Caseificio Sociale di Manciano</h4>         <b>Ruolo:</b> Cooperativa<br>         <b>Luogo:</b> Manciano, Grosseto<br>         <b>Breve descrizione:</b> Rappresenta 200 aziende e lavora 10 milioni di litri di latte di pecora all'anno per la produzione di formaggi freschi e stagionati. Il prodotto di punta è il Pecorino del Cuore, risultato della ricerca in collaborazione con PLAS_TEAM<br>         <img src="https://fabriziocella.github.io/Start-up/caseificio.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_bd790b77962aec120d95d37fc118d230.setContent(html_ac12835ace8c9dc0c0622652947534dd);
+                var html_8884512f10bb4d2553a8b7d9d2797225 = $(`<div id="html_8884512f10bb4d2553a8b7d9d2797225" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:magenta; margin-bottom:6px;">Caseificio Sociale di Manciano</h4>         <b>Ruolo:</b> Cooperativa<br>         <b>Luogo:</b> Manciano, Grosseto<br>         <b>Descrizione:</b> Produzione di Pecorino<br>         <img src="https://fabriziocella.github.io/Start-up/caseificio.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_5b0eebe33e6449878e82e47d5750f34d.setContent(html_8884512f10bb4d2553a8b7d9d2797225);
             
         
 
-        marker_ffd9162d048ef23091e78f926562b13b.bindPopup(popup_bd790b77962aec120d95d37fc118d230)
+        marker_105bb302d5cf9cba789c1a32ce515d54.bindPopup(popup_5b0eebe33e6449878e82e47d5750f34d)
         ;
 
         
     
     
-                marker_ffd9162d048ef23091e78f926562b13b.setIcon(div_icon_fe1fc57fe9ff0d63cf05abc11094dacf);
+                marker_105bb302d5cf9cba789c1a32ce515d54.setIcon(div_icon_131d0edd38e5eea13ad6ca49d6b8a8ff);
             
     
-            var marker_153e2a9b8753f2f41daeb613fb2c50c5 = L.marker(
+            ant_path_1f473b70cbb7695ccd3faf297f1da878 = L.polyline.antPath(
+              [[43.769, 11.255], [42.534, 11.504]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_16b647358e970e1371d9390a08370ebf);
+        
+    
+            feature_group_16b647358e970e1371d9390a08370ebf.addTo(map_f66c17220ff9f8163d745f8538d79468);
+        
+    
+            var feature_group_6d1e9703bb4fa9a52ad7aea413205821 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_53a401f017fba906f0c5837d857b005a = L.marker(
                 [42.763, 11.113],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_6d1e9703bb4fa9a52ad7aea413205821);
         
     
-            var div_icon_3f54723be5cb6ef93fd9e02787975c83 = L.divIcon({
+            var div_icon_37dab515e03152f01feacea1bdd923f4 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:orange;\n        box-shadow: 0 0 10px orange, 0 0 20px orange;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_38a562cbc78d0fca2ccbd31f493e2d9d = L.popup({
-  "maxWidth": 300,
+        var popup_2514bc3d7191f103e9ad9aa396b6ebdc = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_f62b4d43ecd771cea18507bb40157415 = $(`<div id="html_f62b4d43ecd771cea18507bb40157415" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:orange; margin-bottom:5px;">Consorzio Pecorino Toscano DOP</h4>         <b>Ruolo:</b> Consorzio di valorizzazione<br>         <b>Luogo:</b> Grosseto, Toscana<br>         <b>Breve descrizione:</b> Si occupa di controllare il rispetto del disciplinare di produzione, organizzare corsi di aggiornamento per gli allevatori del circuito e creare progetti di valorizzazione e marketing<br>         <img src="https://fabriziocella.github.io/Start-up/pecorino.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_38a562cbc78d0fca2ccbd31f493e2d9d.setContent(html_f62b4d43ecd771cea18507bb40157415);
+                var html_d0b5c1a6054d967410062eac01d317a6 = $(`<div id="html_d0b5c1a6054d967410062eac01d317a6" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:orange; margin-bottom:6px;">Consorzio Pecorino Toscano DOP</h4>         <b>Ruolo:</b> Consorzio di valorizzazione<br>         <b>Luogo:</b> Grosseto, Toscana<br>         <b>Descrizione:</b> Valorizzazione del Pecorino Toscano<br>         <img src="https://fabriziocella.github.io/Start-up/pecorino.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_2514bc3d7191f103e9ad9aa396b6ebdc.setContent(html_d0b5c1a6054d967410062eac01d317a6);
             
         
 
-        marker_153e2a9b8753f2f41daeb613fb2c50c5.bindPopup(popup_38a562cbc78d0fca2ccbd31f493e2d9d)
+        marker_53a401f017fba906f0c5837d857b005a.bindPopup(popup_2514bc3d7191f103e9ad9aa396b6ebdc)
         ;
 
         
     
     
-                marker_153e2a9b8753f2f41daeb613fb2c50c5.setIcon(div_icon_3f54723be5cb6ef93fd9e02787975c83);
+                marker_53a401f017fba906f0c5837d857b005a.setIcon(div_icon_37dab515e03152f01feacea1bdd923f4);
             
     
-            var marker_b8c582a98b862293148d09ebdcff864b = L.marker(
+            ant_path_9dee7681b52ec5227264e35a1acede8d = L.polyline.antPath(
+              [[43.769, 11.255], [42.763, 11.113]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_6d1e9703bb4fa9a52ad7aea413205821);
+        
+    
+            feature_group_6d1e9703bb4fa9a52ad7aea413205821.addTo(map_f66c17220ff9f8163d745f8538d79468);
+        
+    
+            var feature_group_abf664a879be06cee5aff200b9bb387c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_f24ce4396047b5fe259c901e87bb5113 = L.marker(
                 [42.833, 11.225],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_abf664a879be06cee5aff200b9bb387c);
         
     
-            var div_icon_edd82267e43d770f31910faddee404f4 = L.divIcon({
+            var div_icon_07a40a47c3c860d31adbb99878ca9936 = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:lime;\n        box-shadow: 0 0 10px lime, 0 0 20px lime;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_4ff1a826522dbe4b607456d4c8234042 = L.popup({
-  "maxWidth": 300,
+        var popup_f6c375985359d5767a68e2ddb86719ef = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_2d31d0ac44027ce451157fbb9348a627 = $(`<div id="html_2d31d0ac44027ce451157fbb9348a627" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:lime; margin-bottom:5px;">Tenuta di Paganico</h4>         <b>Ruolo:</b> Azienda agricola<br>         <b>Luogo:</b> Paganico, Grosseto<br>         <b>Breve descrizione:</b> Produce carne bovina di razza Maremmana allevata in sistema silvopastorale...<br>         <img src="https://fabriziocella.github.io/Start-up/paganico.png" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_4ff1a826522dbe4b607456d4c8234042.setContent(html_2d31d0ac44027ce451157fbb9348a627);
+                var html_f9fd5937ae101401095b5a83338a751b = $(`<div id="html_f9fd5937ae101401095b5a83338a751b" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:lime; margin-bottom:6px;">Tenuta di Paganico</h4>         <b>Ruolo:</b> Azienda agricola<br>         <b>Luogo:</b> Paganico, Grosseto<br>         <b>Descrizione:</b> Sistema silvopastorale<br>         <img src="https://fabriziocella.github.io/Start-up/paganico.png" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_f6c375985359d5767a68e2ddb86719ef.setContent(html_f9fd5937ae101401095b5a83338a751b);
             
         
 
-        marker_b8c582a98b862293148d09ebdcff864b.bindPopup(popup_4ff1a826522dbe4b607456d4c8234042)
+        marker_f24ce4396047b5fe259c901e87bb5113.bindPopup(popup_f6c375985359d5767a68e2ddb86719ef)
         ;
 
         
     
     
-                marker_b8c582a98b862293148d09ebdcff864b.setIcon(div_icon_edd82267e43d770f31910faddee404f4);
+                marker_f24ce4396047b5fe259c901e87bb5113.setIcon(div_icon_07a40a47c3c860d31adbb99878ca9936);
             
     
-            var marker_66d69d9d849b0bad1d765e42555827bf = L.marker(
+            ant_path_fc4a99bc8685654ee5f7ae8e4b4015bd = L.polyline.antPath(
+              [[43.769, 11.255], [42.833, 11.225]],
+              {
+  "stroke": true,
+  "color": "#0A0A0A",
+  "weight": 3,
+  "opacity": 0.7,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+20,
+5,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#0A0A0A",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 300,
+  "pulseColor": "cyan",
+}
+        ).addTo(feature_group_abf664a879be06cee5aff200b9bb387c);
+        
+    
+            feature_group_abf664a879be06cee5aff200b9bb387c.addTo(map_f66c17220ff9f8163d745f8538d79468);
+        
+    
+            var feature_group_a8e6ec3d689501f474a82755b2ab56e5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_ec26037c7fd112dc6e466e1303091e38 = L.marker(
                 [43.769, 11.255],
                 {
 }
-            ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(feature_group_a8e6ec3d689501f474a82755b2ab56e5);
         
     
-            var div_icon_7049642af539bc7d3cd25147e78d647c = L.divIcon({
+            var div_icon_b345da72080cdfd09f08a811ff154f6e = L.divIcon({
   "html": "\n    \u003cdiv class=\"glow-marker\" style=\"\n        background:red;\n        box-shadow: 0 0 10px red, 0 0 20px red;\n    \"\u003e\u003c/div\u003e\n    ",
   "className": "empty",
 });
         
     
-        var popup_c94a5d8fc1151c5349bb7e74c4a0c927 = L.popup({
-  "maxWidth": 300,
+        var popup_d3d2c28f1e27240c7a74243973172e6e = L.popup({
+  "maxWidth": 350,
+  "maxHeight": 300,
 });
 
         
             
-                var html_28a81b2411da6804ec4b46de6b95d258 = $(`<div id="html_28a81b2411da6804ec4b46de6b95d258" style="width: 100.0%; height: 100.0%;">     <div style="text-align:left; background: rgba(255,255,255,0.9);                  padding:10px; border-radius:8px; max-width:250px;">         <h4 style="color:red; margin-bottom:5px;">RuriS - Rural Research for Innovation and Sustainability</h4>         <b>Ruolo:</b> Innovation Broker<br>         <b>Luogo:</b> Firenze, Toscana<br>         <b>Breve descrizione:</b> Supporta lo sviluppo rurale sostenibile attraverso ricerca, networking tra stakeholder e implementazione di soluzioni innovative.<br>         <img src="https://fabriziocella.github.io/Start-up/oikos.jpg" style="width:100%; height:auto; margin-top:5px; border-radius:4px;">     </div>     </div>`)[0];
-                popup_c94a5d8fc1151c5349bb7e74c4a0c927.setContent(html_28a81b2411da6804ec4b46de6b95d258);
+                var html_7d3d463552cee56062fdb7b899fbfdc0 = $(`<div id="html_7d3d463552cee56062fdb7b899fbfdc0" style="width: 100.0%; height: 100.0%;">     <div style="         background: #ffffff;         border: none;         border-radius: 10px;         padding: 12px;         max-width: 320px;         max-height: 300px;         font-family: 'Segoe UI', sans-serif;         color: #000000;         overflow-y: auto;     ">         <h4 style="color:red; margin-bottom:6px;">RuriS - Rural Research for Innovation and Sustainability</h4>         <b>Ruolo:</b> Innovation Broker<br>         <b>Luogo:</b> Firenze, Toscana<br>         <b>Descrizione:</b> Networking e innovazione rurale<br>         <img src="https://fabriziocella.github.io/Start-up/oikos.jpg" style="width:100%; margin-top:8px; border-radius:4px;">     </div>     </div>`)[0];
+                popup_d3d2c28f1e27240c7a74243973172e6e.setContent(html_7d3d463552cee56062fdb7b899fbfdc0);
             
         
 
-        marker_66d69d9d849b0bad1d765e42555827bf.bindPopup(popup_c94a5d8fc1151c5349bb7e74c4a0c927)
+        marker_ec26037c7fd112dc6e466e1303091e38.bindPopup(popup_d3d2c28f1e27240c7a74243973172e6e)
         ;
 
         
     
     
-                marker_66d69d9d849b0bad1d765e42555827bf.setIcon(div_icon_7049642af539bc7d3cd25147e78d647c);
+                marker_ec26037c7fd112dc6e466e1303091e38.setIcon(div_icon_b345da72080cdfd09f08a811ff154f6e);
             
     
-            ant_path_538c3665fe665a3f47c4de814f46cc53 = L.polyline.antPath(
-              [[43.715, 10.401], [42.763, 11.113]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            feature_group_a8e6ec3d689501f474a82755b2ab56e5.addTo(map_f66c17220ff9f8163d745f8538d79468);
         
     
-            ant_path_c6ca2d6938fd118906631c32bc8a2827 = L.polyline.antPath(
-              [[43.715, 10.401], [42.534, 11.504]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
+            var layer_control_c3edfca6e3af675c767e65ce1314f643_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_e78209f7c71c1a5654bf40885047f272,
+                },
+                overlays :  {
+                    "Ricercatore" : feature_group_8ec79d60a7fc106282e8dabaa25556bd,
+                    "Cooperativa" : feature_group_16b647358e970e1371d9390a08370ebf,
+                    "Consorzio di valorizzazione" : feature_group_6d1e9703bb4fa9a52ad7aea413205821,
+                    "Azienda agricola" : feature_group_abf664a879be06cee5aff200b9bb387c,
+                    "Innovation Broker" : feature_group_a8e6ec3d689501f474a82755b2ab56e5,
+                },
+            };
+            let layer_control_c3edfca6e3af675c767e65ce1314f643 = L.control.layers(
+                layer_control_c3edfca6e3af675c767e65ce1314f643_layers.base_layers,
+                layer_control_c3edfca6e3af675c767e65ce1314f643_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
 }
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
-        
-    
-            ant_path_bd2fc65f8670f1c355846e06ad34bb0b = L.polyline.antPath(
-              [[42.534, 11.504], [42.763, 11.113]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
-        
-    
-            ant_path_25da9521cdae97033dccab6905ca7257 = L.polyline.antPath(
-              [[43.715, 10.401], [42.833, 11.225]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
-        
-    
-            ant_path_824f71e586449b1ec1057195795f9992 = L.polyline.antPath(
-              [[43.769, 11.255], [43.715, 10.401]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
-        
-    
-            ant_path_4d7acc1e1d125ca7667a1099ccb805f3 = L.polyline.antPath(
-              [[43.769, 11.255], [42.534, 11.504]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
-        
-    
-            ant_path_12bebcc910e16f910cbf83791c71a011 = L.polyline.antPath(
-              [[43.769, 11.255], [42.763, 11.113]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
-        
-    
-            ant_path_a2e4a872231b59c9cd5575adbbc189ae = L.polyline.antPath(
-              [[43.769, 11.255], [42.833, 11.225]],
-              {
-  "stroke": true,
-  "color": "cyan",
-  "weight": 4,
-  "opacity": 0.9,
-  "lineCap": "round",
-  "lineJoin": "round",
-  "dashArray": [
-10,
-20,
-],
-  "dashOffset": null,
-  "fill": false,
-  "fillColor": "cyan",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "bubblingMouseEvents": true,
-  "smoothFactor": 1.0,
-  "noClip": false,
-  "paused": false,
-  "reverse": false,
-  "hardwareAcceleration": false,
-  "delay": 600,
-  "pulseColor": "#FFFFFF",
-}
-        ).addTo(map_4e777d27e36ea8881faf9eb5fd5ff0b1);
+            ).addTo(map_f66c17220ff9f8163d745f8538d79468);
+
         
 </script>
 </html>
